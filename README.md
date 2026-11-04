@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Keion App - 軽音サークル運営支援アプリ
 
-## Getting Started
+## 概要
 
-First, run the development server:
+約260名が所属する大学の軽音サークルを対象に、ライブ出演申請やタイムテーブル、支払い状況などの情報を一元管理するために開発したWebアプリケーションです。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+サークル運営に関する情報を整理し、運営側と一般部員の双方が利用しやすい仕組みを目指しました。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 開発背景
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+所属する軽音サークルでは、月に約1回ライブが開催され、そのたびに出演バンドを編成し直しています。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+出演申請やメンバーの確認、タイムテーブルの共有など、多くの情報を扱う必要があることから、運営作業を効率化できるシステムを作りたいと考えました。
 
-## Learn More
+そこで、必要な機能を整理し、約1週間でデモを制作してサークル幹部に提案しました。
 
-To learn more about Next.js, take a look at the following resources:
+## 主な機能
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **アカウント管理**：ログイン、アカウント申請、管理者による承認
+- **出演申請管理**：イベントへの出演申請、申請内容の確認・編集
+- **管理者向け申請管理**：出演申請の一覧表示やステータス管理
+- **タイムテーブル管理**：出演順や演奏曲の表示・編集
+- **イベント管理**：ライブなどのイベント情報の管理
+- **支払い管理**：支払い状況の確認と管理者によるステータス更新
+- **メンバー情報管理**：所属メンバーの情報の表示
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+※一部の画面や機能は開発途中です。
 
-## Deploy on Vercel
+## 使用技術
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| 分類 | 技術 |
+|---|---|
+| フレームワーク | Next.js |
+| フロントエンド | React、TypeScript |
+| スタイリング | Tailwind CSS |
+| 認証 | Firebase Authentication |
+| データベース | Cloud Firestore |
+| バージョン管理 | Git、GitHub |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 担当・開発経験
+
+アプリの企画・設計から主要機能の実装まで、開発の大部分を担当しました。
+
+実際に所属するサークルの運営上の課題を出発点として、必要な機能を考え、Webアプリケーションとして形にしました。
+
+また、試作品を実際にサークル幹部へ提案するところまで取り組みました。
+
+## 開発状況
+
+現在はプロトタイプ段階です。
+
+サークルへの正式導入は実施していませんが、実際の運営で利用することを想定して開発しました。
+
+今後は未実装の機能を完成させるとともに、操作性の改善や運用に向けた検証を進める予定です。
+
+## ローカルでの起動
+
+1. `npm install` で依存パッケージをインストール
+2. `.env.local` に自身のFirebaseプロジェクトの設定を記述
+3. `npm run dev` で開発サーバーを起動
+
+Firebaseの認証・データベースを利用するため、実行には別途Firebaseプロジェクトの設定が必要です。
+
+※認証情報や実際のサークルメンバーの個人情報は、この公開リポジトリには含めていません。
